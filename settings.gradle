@@ -1,0 +1,2 @@
+apply from: '../component_config/lib_config/base_settings.gradle'
+include ':lib_router'

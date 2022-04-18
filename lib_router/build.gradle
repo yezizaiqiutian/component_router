@@ -1,0 +1,35 @@
+apply from: "../../component_config/lib_config/base_gradle.gradle"
+apply from: "../../component_config/lib_config/base_maven.gradle"
+
+//aarVersionName = "0.0.1"
+aarVersionName = "0.0.4-SNAPSHOT" //发布提测包(用于测试的aar版本)
+
+android {
+
+    defaultConfig {
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+
+    implementation "com.alibaba:arouter-api:1.5.1"
+
+}
